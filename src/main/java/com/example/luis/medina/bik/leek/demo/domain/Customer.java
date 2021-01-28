@@ -31,7 +31,7 @@ public class Customer implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "documento")
+    @Column(name = "document")
     private String document;
 
     @Column(name = "firstName")
