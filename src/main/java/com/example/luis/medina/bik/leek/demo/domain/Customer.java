@@ -25,13 +25,13 @@ public class Customer implements Serializable {
 
     private static final long serialVersionUID = -1396164414026490025L;
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "personGen")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(name = "email")
     private String email;
 
-    @Column(unique = true, name = "documento")
+    @Column(name = "documento")
     private String document;
 
     @Column(name = "firstName")

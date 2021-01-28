@@ -19,13 +19,18 @@ public class CustomerFacadeImpl implements CustomerFacade {
     private CustomerMapper customerMapper;
 
     @Override
-    public CustomerDto findByDocument(String document) {
-        return mapper(customerBusiness.findByDocument(document));
+    public CustomerDto findById(Long id) {
+        return mapper(customerBusiness.findById(id));
     }
 
     @Override
     public CustomerDto save(CustomerDto customerDto) {
         return mapper(customerBusiness.save(mapper(customerDto)));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        customerBusiness.deleteById(id);
     }
 
     @Override

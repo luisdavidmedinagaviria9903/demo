@@ -17,13 +17,18 @@ public class CustomerBusinessImpl implements CustomerBusiness {
     private CustomerService customerService;
 
     @Override
-    public Customer findByDocument(String document) {
-        return customerService.findByDocument(document);
+    public Customer findById(Long id) {
+        return customerService.findById(id);
     }
 
     @Override
     public Customer save(Customer customer) {
         return customerService.save(customer);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        customerService.deleteById(id);
     }
 
     @Override

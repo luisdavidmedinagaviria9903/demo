@@ -6,7 +6,8 @@ import org.springframework.data.domain.Pageable;
 
 public interface CustomerBusiness {
 
-    Customer findByDocument(String document);
+    Customer findById(Long id);
     Customer save(Customer customer);
+    void deleteById(Long id);
     Page<Customer> findAllCustomer(Integer pageNo, Integer pageSize, String sortBy);
 }

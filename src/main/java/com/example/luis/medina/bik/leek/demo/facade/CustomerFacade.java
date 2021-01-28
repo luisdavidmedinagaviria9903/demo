@@ -6,8 +6,9 @@ import org.springframework.data.domain.Page;
 
 public interface CustomerFacade {
 
-    CustomerDto findByDocument(String document);
+    CustomerDto findById(Long id);
     CustomerDto save(CustomerDto customerDto);
+    void deleteById(Long id);
     Page<Customer> findAllCustomer(Integer pageNo, Integer pageSize, String sortBy);
 
 }

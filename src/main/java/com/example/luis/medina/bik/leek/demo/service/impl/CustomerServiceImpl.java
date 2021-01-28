@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -17,8 +15,8 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public Customer findByDocument(String document) {
-        return customerRepository.findByDocument(document);
+    public Customer findById(Long id) {
+        return customerRepository.findById(id).orElseThrow(IllegalArgumentException::new);
     }
 
     @Override
@@ -29,6 +27,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Page<Customer> findAllCustomer(Pageable pageable) {
         return customerRepository.findAll(pageable);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        customerRepository.deleteById(id);
     }
 
 }
